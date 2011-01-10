@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+
+define('INDEX',     realpath('www/index.php'));
+define('PHP_BIN',   '/usr/bin/php');
+
+$cmd = @$argv[1];
+
+if ( ! $cmd) {
+    die('Please, set uri');
+}
+
+system(PHP_BIN . ' ' . INDEX . ' --uri=' . $cmd);
+
